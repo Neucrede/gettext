@@ -297,6 +297,11 @@ inline wchar_t *wmemcpy(wchar_t *_S1, const wchar_t *_S2, size_t _N)
         for (; 0 < _N; ++_Su1, ++_S2, --_N)
                 *_Su1 = *_S2;
         return (_S1); }
+inline wchar_t *wmemset(wchar_t *_S, wchar_t _C, size_t _N)
+        {wchar_t *_Su = _S;
+        for (; 0 < _N; ++_Su, --_N)
+                *_Su = _C;
+        return (_S); }
 #endif
 
 #define WIDE_CHAR_VERSION 1

@@ -437,7 +437,9 @@ typedef unsigned char transmem_block_t;
 /* Lock variable to protect the global data in the gettext implementation.  */
 /* Anything before msvc8 is too stupid for the macro used here */
 #if defined _MSC_VER && _MSC_VER < 1400
+/*
 gl_rwlock_t _nl_state_lock = gl_rwlock_initializer;
+*/
 #else
 gl_rwlock_define_initialized (, _nl_state_lock attribute_hidden)
 #endif

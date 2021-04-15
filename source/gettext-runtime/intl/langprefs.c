@@ -205,7 +205,7 @@ _nl_language_preferences_win32_95 ()
 
 /* Get the system's preference.  This can be used as a fallback.  */
 static BOOL CALLBACK
-ret_first_language (HMODULE h, LPCSTR type, LPCSTR name, WORD lang, LONG_PTR param)
+ret_first_language (HMODULE h, LPCSTR type, LPCSTR name, WORD lang, PVOID param)
 {
   *(const char **)param = _nl_locale_name_from_win32_LANGID (lang);
   return FALSE;
@@ -217,7 +217,7 @@ _nl_language_preferences_win32_system (HMODULE kernel32)
   /* Ignore the warning on mingw here. mingw has a wrong definition of the last
      parameter type of ENUMRESLANGPROC.  */
   EnumResourceLanguages (kernel32, RT_VERSION, MAKEINTRESOURCE (1),
-                         ret_first_language, (LONG_PTR)&languages);
+                         ret_first_language, (LONG)&languages);
   return languages;
 }
 
