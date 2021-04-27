@@ -516,6 +516,7 @@
 
 /* Define if the Win32 multithreading API can be used. */
 #define USE_WIN32_THREADS 1
+#define USE_WINDOWS_THREADS 1
 
 /* Version number of package */
 #define VERSION "0.17"

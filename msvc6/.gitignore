@@ -1,0 +1,10 @@
+*.ncb
+*.opt
+*.plg
+*Release
+*Debug
+
+!*.h
+!*.rc
+!*.dsw
+!*.dsp
