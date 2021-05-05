@@ -55,6 +55,11 @@ LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /machine:I386
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /debug /machine:I386 /out:"Release/libintl.dll"
 # SUBTRACT LINK32 /pdb:none
+# Begin Special Build Tool
+TargetPath=.\Release\libintl.dll
+SOURCE="$(InputPath)"
+PostBuild_Cmds=copy $(TargetPath) ..\..\..\ljprog\vs6\ljprog\Release	copy $(TargetPath) ..\..\..\gdpp\vs6\gdpp\Release
+# End Special Build Tool
 
 !ELSEIF  "$(CFG)" == "libintl_dll - Win32 Debug"
 
@@ -82,6 +87,11 @@ LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /debug /machine:I386 /pdbtype:sept
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /debug /machine:I386 /out:"Debug/libintl_debug.dll" /pdbtype:sept
 # SUBTRACT LINK32 /pdb:none
+# Begin Special Build Tool
+TargetPath=.\Debug\libintl_debug.dll
+SOURCE="$(InputPath)"
+PostBuild_Cmds=copy $(TargetPath) ..\..\..\ljprog\vs6\ljprog\Debug	copy $(TargetPath) ..\..\..\gdpp\vs6\gdpp\Debug
+# End Special Build Tool
 
 !ENDIF 
 
